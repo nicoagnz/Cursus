@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:15:49 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/12 11:36:53 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/05/15 09:13:43 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	ft_load_texture(t_data_struct *data)
 	data->textures.wall = mlx_load_png("textures/wall.png");
 	data->textures.floor = mlx_load_png("textures/floor.png");
 	data->textures.player = mlx_load_png("textures/player.png");
-	data->textures.collec = mlx_load_png("textures/collectable.png");
+	data->textures.collect = mlx_load_png("textures/collectable.png");
 	data->textures.exit = mlx_load_png("textures/exit.png");
-	if (!data->textures.player || !data->textures.collec
+	if (!data->textures.player || !data->textures.collect
 		|| !data->textures.exit || !data->textures.floor
 		|| !data->textures.wall)
 		ft_free_all(data, NULL, -1, 4);
@@ -40,7 +40,7 @@ void	ft_render_map(t_data_struct *data)
 			else if (data->map[data->y][data->x] == 'P')
 				ft_load_player(data);
 			else if (data->map[data->y][data->x] == 'C')
-				ft_load_collectable(data);
+				ft_load_collectible(data);
 			else if (data->map[data->y][data->x] == 'E')
 				ft_load_exit(data);
 			data->x++;
@@ -62,9 +62,9 @@ void	ft_hook(mlx_key_data_t key_data, void *data_param)
 		&& data->map[data->new_y][data->new_x] != '1')
 	{
 		if (data->map[data->new_y][data->new_x] == 'C')
-			data->collec_count--;
+			data->collect_count--;
 		if (data->map[data->new_y][data->new_x] == 'E' &&
-			data->collec_count == 0)
+			data->collect_count == 0)
 			ft_free_all(data, NULL, -1, 0);
 		if (data->map[data->new_y][data->new_x] == 'E')
 			return ;

@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 10:48:41 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/12 09:41:39 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/05/15 09:12:47 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,19 @@ void	ft_load_player(t_data_struct *data)
 		ft_free_all(data, NULL, -1, 4);
 }
 
-void	ft_load_collectable(t_data_struct *data)
+void	ft_load_collectible(t_data_struct *data)
 {
-	if (!data->textures.collec)
+	if (!data->textures.collect)
 		ft_free_all(data, NULL, -1, 4);
 	ft_load_floor(data);
-	if (!data->img_collec)
+	if (!data->img_collect)
 	{
-		data->img_collec = mlx_texture_to_image(data->mlx,
-				data->textures.collec);
-		if (!data->img_collec)
+		data->img_collect = mlx_texture_to_image(data->mlx,
+				data->textures.collect);
+		if (!data->img_collect)
 			ft_free_all(data, NULL, -1, 4);
 	}
-	if (mlx_image_to_window(data->mlx, data->img_collec,
+	if (mlx_image_to_window(data->mlx, data->img_collect,
 			data->x * TILE_SIZE, data->y * TILE_SIZE) == -1)
 		ft_free_all(data, NULL, -1, 4);
 }

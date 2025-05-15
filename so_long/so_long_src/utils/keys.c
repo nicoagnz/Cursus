@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 12:53:59 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/12 09:52:21 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/05/15 09:12:36 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_movement(t_data_struct *data)
 {
 	if (data->map[data->new_y][data->new_x] == '1' ||
 		(data->map[data->new_y][data->new_x] == 'E' &&
-		data->collec_count != 0))
+		data->collect_count != 0))
 		return ;
 	data->move_count++;
 	printf("Moves: %i\n", data->move_count);

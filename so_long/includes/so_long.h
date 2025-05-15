@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:22:19 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/12 12:24:55 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/05/15 09:11:13 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_texture_struct
 {
 	mlx_texture_t	*player;
 	mlx_texture_t	*exit;
-	mlx_texture_t	*collec;
+	mlx_texture_t	*collect;
 	mlx_texture_t	*wall;
 	mlx_texture_t	*floor;
 }	t_texture_struct;
@@ -42,9 +42,9 @@ typedef struct s_data_struct
 	mlx_image_t			*img_wall;
 	mlx_image_t			*img_floor;
 	mlx_image_t			*img_player;
-	mlx_image_t			*img_collec; // collect
+	mlx_image_t			*img_collect;
 	mlx_image_t			*img_exit;
-	int					collec_count; // collect
+	int					collect_count;
 	int					move_count;
 	int					px;
 	int					py;
@@ -56,7 +56,7 @@ typedef struct s_validate_struct
 {
 	int		player_count;
 	int		exit_count;
-	int		collec_count; // collect
+	int		collect_count;
 	char	*visited;
 	char	*visited_for_exit;
 	int		px;
@@ -98,7 +98,7 @@ void	ft_render_map(t_data_struct *data);
 void	ft_load_wall(t_data_struct *data);
 void	ft_load_floor(t_data_struct *data);
 void	ft_load_player(t_data_struct *data);
-void	ft_load_collectable(t_data_struct *data);
+void	ft_load_collectible(t_data_struct *data);
 void	ft_load_exit(t_data_struct *data);
 void	ft_hook(mlx_key_data_t key_data, void *data_param);
 void	ft_keys(mlx_key_data_t key_data, t_data_struct *data);

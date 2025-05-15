@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 11:28:21 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/13 09:20:10 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/05/15 09:12:16 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	ft_delete_texture(t_data_struct *data)
 		mlx_delete_texture(data->textures.player);
 		data->textures.player = NULL;
 	}
-	if (data->textures.collec)
+	if (data->textures.collect)
 	{
-		mlx_delete_texture(data->textures.collec);
-		data->textures.collec = NULL;
+		mlx_delete_texture(data->textures.collect);
+		data->textures.collect = NULL;
 	}
 	if (data->textures.exit)
 	{
@@ -68,7 +68,7 @@ void	ft_free_all(t_data_struct *data, char *line, int fd, int code)
 		data->map = NULL;
 	}
 	if (data->textures.wall || data->textures.floor || data->textures.player
-		|| data->textures.collec || data->textures.exit)
+		|| data->textures.collect || data->textures.exit)
 		ft_delete_texture(data);
 	if (data->mlx)
 		mlx_terminate(data->mlx);
