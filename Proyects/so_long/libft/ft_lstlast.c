@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/27 11:49:00 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/04/11 12:40:39 by nacuna-g         ###   ########.fr       */
+/*   Created: 2024/12/27 10:59:06 by nacuna-g          #+#    #+#             */
+/*   Updated: 2025/05/06 13:00:05 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "../includes/libft.h"
 
-// void	ft_lstadd_back(t_list **lst, t_list *new)
-// {
-// 	t_list	*temp;
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*temp;
 
-// 	temp = (*lst);
-// 	if ((*lst))
-// 	{
-// 		while (temp -> next != NULL)
-// 			temp = temp -> next;
-// 		temp -> next = new;
-// 	}
-// 	if (!(*lst))
-// 		((*lst) = new);
-// }
+	if (!lst)
+		return (NULL);
+	temp = lst;
+	while (temp -> next)
+		temp = temp -> next;
+	return (temp);
+}

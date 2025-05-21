@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/10 12:13:08 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/04/17 11:41:11 by nacuna-g         ###   ########.fr       */
+/*   Created: 2025/01/03 11:03:25 by nacuna-g          #+#    #+#             */
+/*   Updated: 2025/05/06 13:00:03 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-char	*ft_strdup(const char *s)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int		i;
-	char	*p;
+	t_list	*temp;
 
-	p = (char *)malloc(ft_strlen(s) + 1);
-	if (p == NULL)
-		return (NULL);
-	i = 0;
-	while (s[i])
+	temp = lst;
+	while (temp)
 	{
-		p[i] = s[i];
-		i++;
+		f(temp -> content);
+		temp = temp -> next;
 	}
-	p[i] = '\0';
-	return (p);
 }
