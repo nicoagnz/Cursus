@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 11:46:09 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/29 09:28:13 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/05/30 13:06:57 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ long	ft_get_current_time(void)
 	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
 }
 
-void	ft_precise_msleep(long usec, t_data *data)
+void	ft_precise_msleep(long msec, t_data *data)
 {
 	long	start;
 
 	start = ft_get_current_time();
-	while (ft_get_current_time() - start < usec / 1000)
+	while (ft_get_current_time() - start < msec / 1000)
 	{
 		pthread_mutex_lock(&data->death_mutex);
 		if (data->someone_died)

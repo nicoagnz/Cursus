@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:22:19 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/29 09:27:44 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/06/02 09:33:44 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_philo
 	pthread_t		thread;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
-	struct s_data	*data;
+
 }			t_philo;
 
 typedef struct s_data
@@ -42,8 +42,8 @@ typedef struct s_data
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print_mutex;
 	pthread_mutex_t	death_mutex;
-	t_philo			*philos;
 	t_philo			*dead_philo;
+	t_philo			*philos;
 }			t_data;
 
 // MAIN FUNCTION
@@ -57,7 +57,7 @@ void	*ft_monitor_routine(void *av);
 
 // UTILS
 long	ft_atol(char *str);
-void	ft_precise_msleep(long usec, t_data *data);
+void	ft_precise_msleep(long msec, t_data *data);
 long	ft_get_current_time(void);
 void	ft_print_status(t_philo *philo, char *status);
 int		ft_strcmp(char *s1, char *s2);

@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:39:36 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/29 09:38:14 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/05/30 11:06:58 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	*ft_philo_routine(void *av)
 		ft_precise_msleep(philo->data->time_to_die * 1000, philo->data);
 	}
 	if (philo->id % 2 == 0)
-		ft_precise_msleep(philo->data->time_to_eat * 500, philo->data);
+		usleep(100);
 	while (philo->data->nb_philos != 1)
 	{
 		pthread_mutex_lock(&philo->data->death_mutex);
