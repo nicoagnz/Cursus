@@ -1,8 +1,74 @@
-# 🚀 42Málaga Projects Repository
+# 🚀 42 Málaga Projects – Nicolás Acuña González
 
-Welcome to my **42Málaga** repository!  
-Here you'll find all the projects I've been working on during my time at **42**, the coding school.
+¡Hola! Soy Nicolás, estudiante de programación en **42 Málaga** y apasionado por el desarrollo de software, la eficiencia del código y los retos técnicos.
 
-I'm incredibly excited to share my progress as I learn and grow through the curriculum. While I'm still learning how to make the most of GitHub, I'll be updating this repository regularly to keep it clean, organized, and professional.
+Este repositorio contiene los proyectos más relevantes que he desarrollado como parte del riguroso currículo de 42. Todos han sido implementados desde cero, siguiendo buenas prácticas, trabajo colaborativo y metodología peer-to-peer.
 
-Stay tuned — this README will also get better over time! 😄
+---
+
+## 👨‍💻 Sobre mí
+
+- 💻 Formación técnica en **Sistemas Microinformáticos y Redes**
+- 📍 Estudiante actual en **Campus 42 Málaga**
+- 🔧 Apasionado por la programación de bajo nivel, estructuras de datos, algoritmos y desarrollo en C
+- 📈 Comprometido con la mejora continua y el aprendizaje autodidacta
+
+🔗 [GitHub](https://github.com/nicoagnz) | ✉️ acunagonzalez12@gmail.com
+
+---
+
+## 🧩 Proyectos del currículo
+
+### 📌 `Libft`
+> Implementación desde cero de funciones estándar de la librería C. Enfocado en lógica básica, manejo de memoria, punteros y estructuras.
+
+### 📌 `get_next_line`
+> Función personalizada que lee líneas de un archivo de descriptor, útil para el manejo eficiente de ficheros. Enfatiza buffers, gestión dinámica de memoria y lectura controlada.
+
+### 📌 `ft_printf`
+> Recreación completa de `printf`. Procesamiento de strings, conversiones y tipos de datos, con formateo dinámico y robusto.
+
+### 📌 `pipex`
+> Ejecución de comandos encadenados usando `pipes` y `fork`. Proyecto clave para dominar procesos, redirecciones y flujo de datos en UNIX.
+
+### 📌 `push_swap`
+> Algoritmo de ordenación con restricciones. Implementación de estructuras de datos personalizadas y lógica algorítmica para minimizar operaciones.
+
+### 📌 `so_long`
+> Mini videojuego 2D usando minilibx. Aplicación de lógica de juego, sprites, lectura de mapas y eventos de teclado.
+
+### 📌 `philo`
+> Solución al problema de los filósofos comensales con multithreading y sincronización mediante mutexes. Aporta comprensión sólida sobre concurrencia y condiciones de carrera.
+
+### 📌 `Exam_02` & `Exam_03`
+> Pruebas prácticas contrarreloj con retos de algoritmia y debugging. Evalúan capacidad para resolver problemas bajo presión.
+
+### 📌 `libft_mod`
+> Versión extendida y optimizada de la Libft original. Experimentación con mejoras de rendimiento y modularización.
+
+---
+
+## 🛠️ Stack y herramientas
+
+| Lenguajes | Herramientas | Sistemas |
+|----------|---------------|----------|
+| C, Bash | Git, GitHub, Vim, Docker, VS Code | Linux (Debian/Ubuntu), Windows |
+
+---
+
+## 🎯 Objetivo de este repositorio
+
+> Mostrar mis progresos como desarrollador, documentar mi evolución y compartir soluciones limpias, funcionales y optimizadas.
+
+Cada proyecto tiene su propia carpeta con el código, documentación y, en algunos casos, **instrucciones de uso o instalación**. Este repositorio se actualiza con cada avance en mi camino como desarrollador.
+
+---
+
+## 🤝 ¿Colaboramos?
+
+Estoy abierto a nuevas oportunidades, prácticas y proyectos donde pueda seguir creciendo. Si buscas un perfil con **actitud, constancia y mentalidad técnica**, ¡hablemos!
+
+---
+
+**🧑‍💻 Nicolás Acuña González**  
+*Programador en formación – 42 Málaga*  
