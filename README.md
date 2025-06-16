@@ -17,7 +17,7 @@ Este repositorio contiene los proyectos más relevantes que he desarrollado como
 
 ---
 
-## 🧩 Proyectos del currículo
+## 🧩 Proyectos
 
 ### 📌 `Libft`
 > Implementación desde cero de funciones estándar de la librería C. Enfocado en lógica básica, manejo de memoria, punteros y estructuras.
