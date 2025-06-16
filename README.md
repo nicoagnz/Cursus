@@ -52,7 +52,7 @@ Este repositorio contiene los proyectos más relevantes que he desarrollado como
 
 | Lenguajes | Herramientas | Sistemas |
 |----------|---------------|----------|
-| C, Bash | Git, GitHub, Vim, Docker, VS Code | Linux (Debian/Ubuntu), Windows |
+| C, Bash | Git, GitHub, Vim, VS Code | Linux (Debian/Ubuntu), Windows |
 
 ---
 
@@ -60,7 +60,7 @@ Este repositorio contiene los proyectos más relevantes que he desarrollado como
 
 > Mostrar mis progresos como desarrollador, documentar mi evolución y compartir soluciones limpias, funcionales y optimizadas.
 
-Cada proyecto tiene su propia carpeta con el código, documentación y, en algunos casos, **instrucciones de uso o instalación**. Este repositorio se actualiza con cada avance en mi camino como desarrollador.
+Cada proyecto tiene su propia carpeta con mi código. Este repositorio se actualiza con cada avance en mi camino como desarrollador.
 
 ---
 
