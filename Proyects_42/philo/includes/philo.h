@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:22:19 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/06/02 09:33:44 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/06/06 09:11:33 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_philo
 	pthread_t		thread;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;
-
+	struct s_data	*data;
 }			t_philo;
 
 typedef struct s_data

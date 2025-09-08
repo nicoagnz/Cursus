@@ -6,13 +6,13 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 09:59:08 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/29 09:38:31 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/09/08 09:12:38 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	ft_check_death_meals(t_data *data)
+int	ft_check_death(t_data *data)
 {
 	int		i;
 	long	current_time;
@@ -21,9 +21,6 @@ int	ft_check_death_meals(t_data *data)
 	while (i < data->nb_philos)
 	{
 		current_time = ft_get_current_time();
-		if (data->meals_required != -1
-			&& data->philos[i].meals_eaten < data->meals_required)
-			break ;
 		if (current_time - data->philos[i].last_meal >= data->time_to_die)
 		{
 			data->someone_died = 1;
@@ -32,7 +29,24 @@ int	ft_check_death_meals(t_data *data)
 		}
 		i++;
 	}
-	if (i == data->nb_philos && data->meals_required != -1)
+	return (0);
+}
+
+int	ft_check_meals(t_data *data)
+{
+	int	i;
+	int	all_eaten;
+
+	all_eaten = 1;
+	i = 0;
+	while (i < data->nb_philos)
+	{
+		if (data->meals_required != -1
+			&& data->philos[i].meals_eaten < data->meals_required)
+			all_eaten = 0;
+		i++;
+	}
+	if (all_eaten && data->meals_required != -1)
 	{
 		data->someone_died = 1;
 		data->dead_philo = NULL;
@@ -50,7 +64,8 @@ void	*ft_monitor_routine(void *av)
 	while (1)
 	{
 		pthread_mutex_lock(&data->death_mutex);
-		res = ft_check_death_meals(data);
+		res = ft_check_meals(data);
+		res = ft_check_death(data);
 		pthread_mutex_unlock(&data->death_mutex);
 		if (res == 1)
 		{
@@ -59,7 +74,7 @@ void	*ft_monitor_routine(void *av)
 		}
 		if (res == 2)
 			return (NULL);
-		usleep(5000);
+		usleep(200);
 	}
 	return (NULL);
 }

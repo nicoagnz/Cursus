@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:39:36 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/05/30 11:06:58 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:42:05 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	ft_eat(t_philo *philo)
 		first_fork = philo->right_fork;
 		second_fork = philo->left_fork;
 	}
+	philo->last_meal = ft_get_current_time();
 	pthread_mutex_lock(first_fork);
 	ft_print_status(philo, "has taken a fork");
 	pthread_mutex_lock(second_fork);
 	ft_print_status(philo, "has taken a fork");
 	pthread_mutex_lock(&philo->data->death_mutex);
-	philo->last_meal = ft_get_current_time();
 	philo->meals_eaten++;
 	pthread_mutex_unlock(&philo->data->death_mutex);
 	ft_print_status(philo, "is eating");
@@ -51,8 +51,8 @@ void	*ft_philo_routine(void *av)
 		ft_print_status(philo, "has taken a fork");
 		ft_precise_msleep(philo->data->time_to_die * 1000, philo->data);
 	}
-	if (philo->id % 2 == 0)
-		usleep(100);
+	if (philo->id % 2 != 0)
+		usleep(philo->data->time_to_eat);
 	while (philo->data->nb_philos != 1)
 	{
 		pthread_mutex_lock(&philo->data->death_mutex);
