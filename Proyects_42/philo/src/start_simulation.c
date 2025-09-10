@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:39:36 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/09/04 12:42:05 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/09/10 12:21:14 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	ft_eat(t_philo *philo)
 		first_fork = philo->right_fork;
 		second_fork = philo->left_fork;
 	}
-	philo->last_meal = ft_get_current_time();
 	pthread_mutex_lock(first_fork);
 	ft_print_status(philo, "has taken a fork");
 	pthread_mutex_lock(second_fork);
 	ft_print_status(philo, "has taken a fork");
 	pthread_mutex_lock(&philo->data->death_mutex);
+	philo->last_meal = ft_get_current_time();
 	philo->meals_eaten++;
 	pthread_mutex_unlock(&philo->data->death_mutex);
 	ft_print_status(philo, "is eating");
@@ -41,19 +41,19 @@ void	ft_eat(t_philo *philo)
 	pthread_mutex_unlock(first_fork);
 }
 
-void	*ft_philo_routine(void *av)
+void	ft_philo_one_case(t_philo *philo)
 {
-	t_philo	*philo;
+	ft_print_status(philo, "has taken a fork");
+	ft_precise_msleep(philo->data->time_to_die * 1000, philo->data);
+}
 
-	philo = (t_philo *)av;
-	if (philo->data->nb_philos == 1)
-	{
-		ft_print_status(philo, "has taken a fork");
-		ft_precise_msleep(philo->data->time_to_die * 1000, philo->data);
-	}
+void	ft_philo_main_loop(t_philo *philo)
+{
 	if (philo->id % 2 != 0)
-		usleep(philo->data->time_to_eat);
-	while (philo->data->nb_philos != 1)
+		usleep(philo->data->time_to_eat * 1000);
+	if (philo->data->nb_philos % 2 != 0 && philo->id == philo->data->nb_philos)
+		usleep(philo->data->time_to_eat * 1000 / 2);
+	while (1)
 	{
 		pthread_mutex_lock(&philo->data->death_mutex);
 		if (philo->data->someone_died)
@@ -66,6 +66,21 @@ void	*ft_philo_routine(void *av)
 		ft_eat(philo);
 		ft_print_status(philo, "is sleeping");
 		ft_precise_msleep(philo->data->time_to_sleep * 1000, philo->data);
+	}
+}
+
+void	*ft_philo_routine(void *av)
+{
+	t_philo	*philo;
+
+	philo = (t_philo *)av;
+	if (philo->data->nb_philos == 1)
+	{
+		ft_philo_one_case(philo);
+	}
+	else
+	{
+		ft_philo_main_loop(philo);
 	}
 	return (NULL);
 }

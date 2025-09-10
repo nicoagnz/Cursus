@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 09:53:35 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/09/04 10:18:36 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/09/10 11:19:44 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,13 @@ int	ft_strcmp(char *s1, char *s2)
 void	ft_print_status(t_philo *philo, char *status)
 {
 	long	time;
+	int		someone_died;
 
+	pthread_mutex_lock(&philo->data->death_mutex);
+	someone_died = philo->data->someone_died;
+	pthread_mutex_unlock(&philo->data->death_mutex);
 	pthread_mutex_lock(&philo->data->print_mutex);
-	if (!philo->data->someone_died || !ft_strcmp(status, "died"))
+	if (!someone_died || !ft_strcmp(status, "died"))
 	{
 		time = ft_get_current_time() - philo->data->start_time;
 		printf("%ld %d %s\n", time, philo->id, status);

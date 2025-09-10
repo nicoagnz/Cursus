@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:22:19 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/06/06 09:11:33 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/09/10 12:18:16 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,11 @@ void	ft_init_mutex(t_data *data);
 void	ft_start_simulation(t_data *data);
 void	*ft_philo_routine(void *av);
 void	*ft_monitor_routine(void *av);
+
+// SIMULATION FUNCTIONS
+void	ft_philo_one_case(t_philo *philo);
+void	ft_philo_main_loop(t_philo *philo);
+void	ft_eat(t_philo *philo);
 
 // UTILS
 long	ft_atol(char *str);

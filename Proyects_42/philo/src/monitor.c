@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 09:59:08 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/09/08 09:12:38 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/09/10 11:47:44 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_check_meals(t_data *data)
 	{
 		data->someone_died = 1;
 		data->dead_philo = NULL;
-		return (2);
+		return (1);
 	}
 	return (0);
 }
@@ -58,23 +58,24 @@ int	ft_check_meals(t_data *data)
 void	*ft_monitor_routine(void *av)
 {
 	t_data	*data;
-	int		res;
+	int		meals_check;
+	int		death_check;
 
 	data = (t_data *)av;
 	while (1)
 	{
 		pthread_mutex_lock(&data->death_mutex);
-		res = ft_check_meals(data);
-		res = ft_check_death(data);
+		meals_check = ft_check_meals(data);
+		death_check = ft_check_death(data);
 		pthread_mutex_unlock(&data->death_mutex);
-		if (res == 1)
+		if (death_check)
 		{
 			ft_print_status(data->dead_philo, "died");
 			return (NULL);
 		}
-		if (res == 2)
+		if (meals_check)
 			return (NULL);
-		usleep(200);
+		usleep(100);
 	}
 	return (NULL);
 }
