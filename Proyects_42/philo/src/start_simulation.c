@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 10:39:36 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/09/10 12:21:14 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:40:10 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,19 @@ void	ft_eat(t_philo *philo)
 	pthread_mutex_t	*first_fork;
 	pthread_mutex_t	*second_fork;
 
-	if (philo->left_fork < philo->right_fork)
-	{
-		first_fork = philo->left_fork;
-		second_fork = philo->right_fork;
-	}
-	else
-	{
-		first_fork = philo->right_fork;
-		second_fork = philo->left_fork;
-	}
+	ft_get_ordered_forks(philo, &first_fork, &second_fork);
 	pthread_mutex_lock(first_fork);
 	ft_print_status(philo, "has taken a fork");
 	pthread_mutex_lock(second_fork);
 	ft_print_status(philo, "has taken a fork");
 	pthread_mutex_lock(&philo->data->death_mutex);
+	if (philo->data->someone_died)
+	{
+		pthread_mutex_unlock(&philo->data->death_mutex);
+		pthread_mutex_unlock(second_fork);
+		pthread_mutex_unlock(first_fork);
+		return ;
+	}
 	philo->last_meal = ft_get_current_time();
 	philo->meals_eaten++;
 	pthread_mutex_unlock(&philo->data->death_mutex);
@@ -49,7 +47,7 @@ void	ft_philo_one_case(t_philo *philo)
 
 void	ft_philo_main_loop(t_philo *philo)
 {
-	if (philo->id % 2 != 0)
+	if (philo->id % 2 == 0)
 		usleep(philo->data->time_to_eat * 1000);
 	if (philo->data->nb_philos % 2 != 0 && philo->id == philo->data->nb_philos)
 		usleep(philo->data->time_to_eat * 1000 / 2);

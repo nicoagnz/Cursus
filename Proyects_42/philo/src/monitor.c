@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 09:59:08 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/09/10 11:47:44 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:57:35 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	*ft_monitor_routine(void *av)
 		pthread_mutex_lock(&data->death_mutex);
 		meals_check = ft_check_meals(data);
 		death_check = ft_check_death(data);
-		pthread_mutex_unlock(&data->death_mutex);
+		pthrea100d_mutex_unlock(&data->death_mutex);
 		if (death_check)
 		{
 			ft_print_status(data->dead_philo, "died");

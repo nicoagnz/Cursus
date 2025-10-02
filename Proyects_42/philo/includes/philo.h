@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:22:19 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/09/10 12:18:16 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:39:57 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ long	ft_get_current_time(void);
 void	ft_print_status(t_philo *philo, char *status);
 int		ft_strcmp(char *s1, char *s2);
 void	ft_cleanup(t_data *data);
+void	ft_get_ordered_forks(t_philo *philo, pthread_mutex_t **first_fork,
+			pthread_mutex_t **second_fork);
 
 // ERROR HANDLER
 void	ft_error(char *msg);

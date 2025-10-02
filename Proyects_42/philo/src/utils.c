@@ -6,11 +6,26 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 09:53:35 by nacuna-g          #+#    #+#             */
-/*   Updated: 2025/09/10 11:19:44 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2025/10/01 09:38:52 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	ft_get_ordered_forks(t_philo *philo, pthread_mutex_t **first_fork,
+		pthread_mutex_t **second_fork)
+{
+	if (philo->left_fork < philo->right_fork)
+	{
+		*first_fork = philo->left_fork;
+		*second_fork = philo->right_fork;
+	}
+	else
+	{
+		*first_fork = philo->right_fork;
+		*second_fork = philo->left_fork;
+	}
+}
 
 int	ft_strcmp(char *s1, char *s2)
 {
