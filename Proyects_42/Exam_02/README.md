@@ -1,9 +1,6 @@
-EXAM_02 — Estado del Proyecto
+🌟 EXAM_02 — Estado del Proyecto
+<p align="center"> <img src="https://img.shields.io/badge/status-desactualizado-red?style=for-the-badge"> <img src="https://img.shields.io/badge/42-NOT%20OFFICIAL-black?style=for-the-badge"> <img src="https://img.shields.io/badge/language-C-blue?style=for-the-badge"> </p>
+📢 Aviso Importante
 
-Este repositorio contiene ejercicios que anteriormente formaban parte del EXAM_02 de 42.
-Sin embargo, estos ejercicios ya no corresponden a la versión actual del examen.
-
-❗ Importante
-
-El contenido incluido aquí no refleja los ejercicios oficiales que se utilizan hoy en día en el EXAM_02.
-La estructura, las preguntas y los requisitos del examen han cambiado con el tiempo, por lo que este material debe considerarse únicamente como referencia histórica o práctica adicional, pero no como una preparación oficial o actualizada.
+Este repositorio contiene ejercicios que pertenecían a una versión antigua del EXAM_02 de 42, pero
+👉 ya no forman parte del examen actual.
