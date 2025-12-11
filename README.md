@@ -22,11 +22,14 @@ Este repositorio contiene los proyectos más relevantes que he desarrollado como
 ### 📌 `Libft`
 > Implementación desde cero de funciones estándar de la librería C. Enfocado en lógica básica, manejo de memoria, punteros y estructuras.
 
+### 📌 `ft_printf`
+> Recreación completa de `printf`. Procesamiento de strings, conversiones y tipos de datos, con formateo dinámico y robusto.
+
 ### 📌 `get_next_line`
 > Función personalizada que lee líneas de un archivo de descriptor, útil para el manejo eficiente de ficheros. Enfatiza buffers, gestión dinámica de memoria y lectura controlada.
 
-### 📌 `ft_printf`
-> Recreación completa de `printf`. Procesamiento de strings, conversiones y tipos de datos, con formateo dinámico y robusto.
+### 📌 `so_long`
+> Mini videojuego 2D usando minilibx. Aplicación de lógica de juego, sprites, lectura de mapas y eventos de teclado.
 
 ### 📌 `pipex`
 > Ejecución de comandos encadenados usando `pipes` y `fork`. Proyecto clave para dominar procesos, redirecciones y flujo de datos en UNIX.
@@ -34,17 +37,14 @@ Este repositorio contiene los proyectos más relevantes que he desarrollado como
 ### 📌 `push_swap`
 > Algoritmo de ordenación con restricciones. Implementación de estructuras de datos personalizadas y lógica algorítmica para minimizar operaciones.
 
-### 📌 `so_long`
-> Mini videojuego 2D usando minilibx. Aplicación de lógica de juego, sprites, lectura de mapas y eventos de teclado.
-
-### 📌 `philo`
+### 📌 `philosophers`
 > Solución al problema de los filósofos comensales con multithreading y sincronización mediante mutexes. Aporta comprensión sólida sobre concurrencia y condiciones de carrera.
+
+### 📌 `minishell`
+> Implementación de un **shell minimalista** en C. Permite ejecutar comandos básicos, manejar redirecciones, pipes y variables de entorno. Refuerza comprensión sobre procesos, señales y gestión de la terminal en UNIX.
 
 ### 📌 `Exam_02` & `Exam_03`
 > Pruebas prácticas contrarreloj con retos de algoritmia y debugging. Evalúan capacidad para resolver problemas bajo presión.
-
-### 📌 `libft_mod`
-> Versión extendida y optimizada de la Libft original. Experimentación con mejoras de rendimiento y modularización.
 
 ---
 
@@ -71,4 +71,4 @@ Estoy abierto a nuevas oportunidades, prácticas y proyectos donde pueda seguir 
 ---
 
 **🧑‍💻 Nicolás Acuña González**  
-*Programador en formación – 42 Málaga*  
+*Programador en formación – 42 Málaga*
