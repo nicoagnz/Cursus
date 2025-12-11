@@ -52,7 +52,7 @@ Este repositorio contiene los proyectos más relevantes que he desarrollado como
 
 | Lenguajes | Herramientas | Sistemas |
 |----------|---------------|----------|
-| C, Bash, C++ | Git, GitHub, Vim, VS Code | Linux (Debian/Ubuntu), Windows |
+| C, C++, Bash | Git, GitHub, Vim, VS Code | Linux (Debian/Ubuntu), Windows |
 
 ---
 
