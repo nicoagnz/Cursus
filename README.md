@@ -10,7 +10,7 @@ Este repositorio contiene los proyectos más relevantes que he desarrollado como
 
 - 💻 Formación técnica en **Sistemas Microinformáticos y Redes**
 - 📍 Estudiante actual en **Campus 42 Málaga**
-- 🔧 Apasionado por la programación de bajo nivel, estructuras de datos, algoritmos y desarrollo en C
+- 🔧 Apasionado por la programación, estructuras de datos, algoritmos y desarrollo en C
 - 📈 Comprometido con la mejora continua y el aprendizaje autodidacta
 
 🔗 [GitHub](https://github.com/nicoagnz) | ✉️ acunagonzalez12@gmail.com
