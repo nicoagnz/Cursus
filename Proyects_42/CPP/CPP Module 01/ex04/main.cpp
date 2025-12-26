@@ -2,6 +2,25 @@
 #include <fstream>
 #include <string>
 
+std::string replaceLine(const std::string &line, const std::string &s1, const std::string &s2)
+{
+	if (s1.empty())
+		return line;
+
+	std::string result;
+	size_t pos = 0;
+	size_t found = 0;
+
+	while ((found = line.find(s1, pos)) != std::string::npos)
+	{
+		result.append(line, pos, found - pos);
+		result += s2;
+		pos = found + s1.length();
+	}
+	result.append(line, pos);
+	return result;
+}
+
 int main(int argc, char **argv)
 {
 	if (argc != 4)
@@ -31,7 +50,7 @@ int main(int argc, char **argv)
 	std::string line;
 	while (std::getline(infile, line))
 	{
-		outfile << line;
+		outfile << replaceLine(line, s1, s2);
 		if (!infile.eof())
 			outfile << std::endl;
 	}
