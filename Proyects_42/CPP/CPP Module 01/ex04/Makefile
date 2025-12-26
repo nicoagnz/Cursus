@@ -1,7 +1,9 @@
+NAME = sed
+
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
 SRC = main.cpp
-NAME = sed
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
