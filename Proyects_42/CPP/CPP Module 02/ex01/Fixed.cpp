@@ -1,7 +1,4 @@
 #include "Fixed.hpp"
-#include <cmath>
-
-/* Constructores */
 
 Fixed::Fixed() : _rawBits(0)
 {
@@ -26,8 +23,6 @@ Fixed::Fixed(const Fixed& other)
 	_rawBits = other._rawBits;
 }
 
-/* Operador asignación */
-
 Fixed& Fixed::operator=(const Fixed& other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
@@ -36,14 +31,10 @@ Fixed& Fixed::operator=(const Fixed& other)
 	return *this;
 }
 
-/* Destructor */
-
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
 }
-
-/* Métodos */
 
 int Fixed::getRawBits(void) const
 {
@@ -64,8 +55,6 @@ int Fixed::toInt(void) const
 {
 	return _rawBits >> _fractionalBits;
 }
-
-/* Operador << */
 
 std::ostream& operator<<(std::ostream& os, const Fixed& f)
 {
