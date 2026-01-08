@@ -25,7 +25,7 @@ Este proyecto pone el foco en el razonamiento sobre topologia de red, rangos de 
 
 ## Recursos
 
-- Guias de Github
+- Guias de Github.
 [1- (caroldaniel)](https://github.com/caroldaniel/42sp-cursus-netpractice)
 [2- (ricardoreves)](https://github.com/ricardoreves/42-net-practice)
 
