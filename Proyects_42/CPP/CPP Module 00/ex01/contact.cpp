@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:19:26 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 11:19:27 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/12 13:02:04 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@ bool Contact::setInfo()
 	std::string input;
 	std::cout << "First name: ";
 	if (!std::getline(std::cin, input)) return false;
-	firstName = input;
+		firstName = input;
 	std::cout << "Last name: ";
 	if (!std::getline(std::cin, input)) return false;
-	lastName = input;
+		lastName = input;
 	std::cout << "Nickname: ";
 	if (!std::getline(std::cin, input)) return false;
-	nickname = input;
+		nickname = input;
 	std::cout << "Phone number: ";
 	if (!std::getline(std::cin, input)) return false;
-	phone = input;
+		phone = input;
 	std::cout << "Darkest secret: ";
 	if (!std::getline(std::cin, input)) return false;
-	secret = input;
+		secret = input;
 	if (firstName.empty() || lastName.empty() || nickname.empty() || phone.empty() || secret.empty())
 	{
 		std::cout << " _________________________________\n" << std::endl;

@@ -6,12 +6,11 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:19:37 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 11:19:38 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/12 13:25:55 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
-
 
 static std::string format(const std::string &s)
 {
