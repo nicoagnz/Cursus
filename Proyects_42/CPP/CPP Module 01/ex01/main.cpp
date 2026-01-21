@@ -17,7 +17,7 @@ int	main()
 	int N = 5;
 	int i = 0;
 
-	Zombie* horde = zombieHorde(5, "Hordezombie");
+	Zombie* horde = zombieHorde(N, "Hordezombie");
 	if (!horde)
 		return 1;
 	while (i < N)
