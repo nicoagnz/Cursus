@@ -6,17 +6,22 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:19:37 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 13:25:55 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/22 13:09:19 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-static std::string format(const std::string &s)
+PhoneBook::PhoneBook()
 {
-	if (s.length() > 10)
-		return s.substr(0, 9) + ".";
-	return std::string(10 - s.length(), ' ') + s;
+	index = 0;
+}
+
+static std::string format(const std::string &str)
+{
+	if (str.length() > 10)
+		return (str.substr(0, 9) + ".");
+	return (std::string(10 - str.length(), ' ') + str);
 }
 
 void PhoneBook::add()
@@ -24,7 +29,6 @@ void PhoneBook::add()
 	Contact c;
 	if (!c.setInfo())
 	{
-		std::cout << "\n---Add cancelled or invalid input---\n" << std::endl;
 		return;
 	}
 	contacts[index % 8] = c;
@@ -40,7 +44,7 @@ void PhoneBook::search()
 
 	while (i < 8 && i < index)
 	{
-		std::cout << "|" << std::setw(10) << i;
+		std::cout << "|" << std::setw(9) << i;
 		std::cout << "|" << format(contacts[i].getFirst());
 		std::cout << "|" << format(contacts[i].getLast());
 		std::cout << "|" << format(contacts[i].getNick());
@@ -49,24 +53,22 @@ void PhoneBook::search()
 	}
 	std::cout << "Enter index: ";
 	if (!std::getline(std::cin, line))
+	{
+		std::cout << "\n D:" << std::endl;
 		return;
+	}
 	if (line.empty())
 	{
 		std::cout << "No input given." << std::endl;
 		return;
 	}
-	i = 0;
-	while (line[i])
+	if (line.length() != 1 || !isdigit(line[0]) || line[0] > '7' || line[0] < '0')
 	{
-		if (!isdigit(line[i]))
-		{
-			std::cout << "Invalid input." << std::endl;
-			return;
-		}
-		idx = idx * 10 + (line[i] - '0');
-		i++;
+		std::cout << "Invalid index." << std::endl;
+		return;
 	}
-	if (idx < 0 || idx >= index || idx >= 8)
+	idx = line[0] - '0';
+	if (idx >= index)
 	{
 		std::cout << "Index out of range." << std::endl;
 		return;

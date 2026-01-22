@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:19:32 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 11:19:33 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:26:48 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ private:
 public:
 	bool setInfo();
 	void displayFull() const;
-	std::string getFirst() const { return firstName; }
-	std::string getLast() const { return lastName; }
-	std::string getNick() const { return nickname; }
+	std::string getFirst() const;
+	std::string getLast() const;
+	std::string getNick() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:19:52 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 11:19:53 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:10:02 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <ctime>
 #include <iomanip>
-
+() :
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;
 int Account::_totalNbDeposits = 0;

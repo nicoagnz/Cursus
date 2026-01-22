@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:19:26 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 13:02:04 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/22 11:26:57 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,26 @@
 
 bool Contact::setInfo()
 {
-	std::string input;
 	std::cout << "First name: ";
-	if (!std::getline(std::cin, input)) return false;
-		firstName = input;
+	std::getline(std::cin, firstName);
 	std::cout << "Last name: ";
-	if (!std::getline(std::cin, input)) return false;
-		lastName = input;
+	std::getline(std::cin, lastName);
 	std::cout << "Nickname: ";
-	if (!std::getline(std::cin, input)) return false;
-		nickname = input;
+	std::getline(std::cin, nickname);
 	std::cout << "Phone number: ";
-	if (!std::getline(std::cin, input)) return false;
-		phone = input;
+	std::getline(std::cin, phone);
 	std::cout << "Darkest secret: ";
-	if (!std::getline(std::cin, input)) return false;
-		secret = input;
+	std::getline(std::cin, secret);
+	if (!std::cin)
+	{
+		std::cout << "\n D:" << std::endl;
+		return false;
+	}
 	if (firstName.empty() || lastName.empty() || nickname.empty() || phone.empty() || secret.empty())
 	{
-		std::cout << " _________________________________\n" << std::endl;
-		std::cout << " Error: all fields must be filled." << std::endl;
-		std::cout << " _________________________________\n" << std::endl;
+		std::cout << "\n ===================================" << std::endl;
+		std::cout << "  Error: all fields must be filled." << std::endl;
+		std::cout << " ===================================\n" << std::endl;
 		return false;
 	}
 	return true;
@@ -47,4 +46,18 @@ void Contact::displayFull() const
 	std::cout << "Nickname: " << nickname << std::endl;
 	std::cout << "Phone number: " << phone << std::endl;
 	std::cout << "Darkest secret: " << secret << std::endl;
+}
+
+std::string Contact::getFirst() const 
+{
+	return firstName;
+}
+
+std::string Contact::getLast() const
+{
+	return lastName;
+}
+std::string Contact::getNick() const
+{
+	return nickname;
 }

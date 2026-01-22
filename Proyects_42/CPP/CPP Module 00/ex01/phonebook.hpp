@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:19:39 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 13:25:50 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:04:20 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 	int index;
 
 public:
-	PhoneBook() : index(0) {}
+	PhoneBook();
 	void add();
 	void search();
 };
