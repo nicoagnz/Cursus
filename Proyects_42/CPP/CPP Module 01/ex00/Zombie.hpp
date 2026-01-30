@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:58:48 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 11:58:49 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:22:57 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Zombie
 {
 private:
-	std::string name;
+	std::string _name;
 public:
 	Zombie(std::string name);
 	~Zombie();

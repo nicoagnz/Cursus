@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:01:46 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:01:47 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/30 13:11:33 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Fixed::Fixed(const float f)
 Fixed::Fixed(const Fixed& other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	_rawBits = other._rawBits;
+	this->_rawBits = other._rawBits;
 }
 
 Fixed& Fixed::operator=(const Fixed& other)

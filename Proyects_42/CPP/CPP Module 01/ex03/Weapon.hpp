@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:00:42 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:00:43 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 11:21:46 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Weapon
 {
 private:
-	std::string type;
+	std::string _type;
 public:
 	Weapon(std::string type);
 	const std::string& getType(void) const;

@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:00:33 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:00:34 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:06:37 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class HumanB
 {
 private:
-	std::string name;
-	Weapon *weapon;
+	std::string _name;
+	Weapon *_weapon;
 public:
 	HumanB(std::string name);
 	void setWeapon(Weapon &weapon);

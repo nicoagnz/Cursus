@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:01:14 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:01:15 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/30 10:54:55 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,10 @@ void Harl::filter( std::string level )
 	{
 		case 0:
 			debug();
-			/* fall through */
 		case 1:
 			info();
-			/* fall through */
 		case 2:
 			warning();
-			/* fall through */
 		case 3:
 			error();
 			break;

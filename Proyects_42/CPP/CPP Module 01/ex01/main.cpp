@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 11:59:00 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 11:59:01 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/01/29 10:56:53 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main()
 	int N = 5;
 	int i = 0;
 
-	Zombie* horde = zombieHorde(5, "Hordezombie");
+	Zombie* horde = zombieHorde(N, "Hordezombie");
 	if (!horde)
 		return 1;
 	while (i < N)
