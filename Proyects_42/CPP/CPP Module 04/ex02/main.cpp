@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:06:37 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:06:38 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 10:28:00 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,45 +18,43 @@
 
 int main()
 {
-	std::cout << "========== Exercise 03 (AAnimal abstract) Test ==========" << std::endl;
+	const int size = 6;
+	AAnimal* animals[size];
 
-	const AAnimal* j = new Dog();
-	const AAnimal* i = new Cat();
-	delete j;
-	delete i;
-
-	const int SIZE = 6;
-	AAnimal* zoo[SIZE];
-	for (int k = 0; k < SIZE; ++k)
+	std::cout << "=== Creating animals ===" << std::endl;
+	int i = 0;
+	while (i < size / 2)
 	{
-		if (k < SIZE / 2)
-			zoo[k] = new Dog();
-		else
-			zoo[k] = new Cat();
+		animals[i] = new Dog();
+		i++;
+	}
+	while (i < size)
+	{
+		animals[i] = new Cat();
+		i++;
 	}
 
-	for (int k = 0; k < SIZE; ++k)
+	std::cout << "\n=== Deleting animals ===" << std::endl;
+	i = 0;
+	while (i < size)
 	{
-		std::cout << zoo[k]->getType() << std::endl;
-		zoo[k]->makeSound();
+		delete animals[i];
+		i++;
 	}
 
-	for (int k = 0; k < SIZE; ++k)
-		delete zoo[k];
+	std::cout << "\n=== Copy tests ===" << std::endl;
+	Dog originalDog;
+	Dog copiedDog(originalDog);
+	Cat originalCat;
+	Cat copiedCat(originalCat);
 
-	std::cout << "\n-- Deep copy test --" << std::endl;
-	Dog* dog1 = new Dog();
-	dog1->getBrain()->ideas[0] = "Chase the ball";
-	Dog* dog2 = new Dog(*dog1);
-	std::cout << "dog1 idea[0]: " << dog1->getBrain()->ideas[0] << std::endl;
-	std::cout << "dog2 idea[0]: " << dog2->getBrain()->ideas[0] << std::endl;
+	std::cout << "\n=== Destroying copies ===" << std::endl;
 
-	dog1->getBrain()->ideas[0] = "Sleep now";
-	std::cout << "after change dog1 idea[0]: " << dog1->getBrain()->ideas[0] << std::endl;
-	std::cout << "after change dog2 idea[0]: " << dog2->getBrain()->ideas[0] << std::endl;
 
-	delete dog1;
-	delete dog2;
 
 	return 0;
 }
+
+// 	std::cout << "\n=== Abstract class test ===" << std::endl;
+//	AAnimal test;
+//	AAnimal* test2 = new AAnimal();

@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:03:16 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:03:17 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/02/16 10:48:18 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ WrongCat::~WrongCat()
 
 void WrongCat::makeSound() const
 {
-	std::cout << "[WrongCat] Meow? (but called as WrongAnimal)" << std::endl;
+	std::cout << "[WrongCat] Miau?" << std::endl;
 }

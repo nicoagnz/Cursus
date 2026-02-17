@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:03:02 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:03:03 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/02/16 10:20:45 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-	std::cout << "[Dog] Woof Woof!" << std::endl;
+	std::cout << "[Dog] Guau Guau!" << std::endl;
 }

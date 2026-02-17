@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:06:30 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:06:31 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 10:16:25 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ public:
 	AAnimal& operator=(const AAnimal& other);
 	virtual ~AAnimal();
 
-	std::string getType() const;
 	virtual void makeSound() const = 0;
+	std::string getType() const;
 };
 
 #endif

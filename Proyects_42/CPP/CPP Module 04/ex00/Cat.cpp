@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:02:58 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:02:59 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/02/16 10:22:02 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ Cat::~Cat()
 
 void Cat::makeSound() const
 {
-	std::cout << "[Cat] Meow Meow!" << std::endl;
+	std::cout << "[Cat] Miau Miau!" << std::endl;
 }

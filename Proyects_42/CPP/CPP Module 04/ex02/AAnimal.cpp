@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/12 12:06:29 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/01/12 12:06:30 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/02/17 10:21:51 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,4 @@ AAnimal::~AAnimal()
 std::string AAnimal::getType() const
 {
 	return type;
-}
-
-void AAnimal::makeSound() const
-{
-	std::cout << "[AAnimal] *generic animal sound*" << std::endl;
 }
