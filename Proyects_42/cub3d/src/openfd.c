@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   openfd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/12 10:59:35 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/02/19 10:53:52 by nacuna-g         ###   ########.fr       */
+/*   Created: 2026/02/19 10:32:08 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/02/19 10:39:13 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "cub3d.h"
 
-# include "libft.h"
-
-typedef enum e_validate_error
+int	ft_openfd(char *file)
 {
-	VALIDATE_OK,
-	VALIDATE_ERROR
-}	t_validate_error;
+	int fd;
 
-typedef struct s_game
-{
-	// Aquí irán los campos necesarios para el juego, como el mapa, la posición del jugador, etc.
-}	t_game;
-
-int ft_validate_args(int ac, char **av);
-int ft_error_handler(char *error_msg);
-int	ft_openfd(char *file);
-
-#endif
+	fd = open(file, O_RDONLY);
+	if (fd < 0)
+	{
+		ft_error_handler("Error: Could not open file");
+		return (-1);
+	}
+	return (fd);
+}
