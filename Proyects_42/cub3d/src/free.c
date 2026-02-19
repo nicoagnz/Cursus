@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   openfd.c                                           :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/19 10:32:08 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/02/19 12:43:50 by nacuna-g         ###   ########.fr       */
+/*   Created: 2026/02/19 12:49:22 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/02/19 12:49:36 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-int	ft_openfd(char *file)
+void	ft_free_game(t_game *game)
 {
-	int fd;
-
-	fd = open(file, O_RDONLY);
-	if (fd < 0)
-	{
-		ft_error_handler("Error\nCould not open file");
-		return (-1);
-	}
-	close(fd);
-	return (fd);
+	// Aquí se liberarán todos los recursos asociados al juego, como el mapa, las texturas, etc.
 }
