@@ -27,6 +27,12 @@ char	*get_next_line(int fd)
 	if (!str[fd])
 		return (NULL);
 	result = ft_correct_line(str[fd]);
+	if (!result)
+	{
+		free(str[fd]);
+		str[fd] = NULL;
+		return (NULL);
+	}
 	str[fd] = ft_rest_line(str[fd]);
 	return (result);
 }

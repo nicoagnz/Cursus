@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 11:22:55 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/02/17 10:38:49 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/02/26 12:52:18 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+int		ft_is_space(char c);
 
 //	LIST STRUCT
 typedef struct s_list
