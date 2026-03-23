@@ -73,4 +73,81 @@ int ft_popen(const char *file, char *const argv[], char type)
 	return (pipefd[type != 'r']);
 }
 
+==============================================================================
+
+#include <stdlib.h>
+#include <unistd.h>
+
+int ft_popen(const char *file, char *const argv[], char type)
+{
+	int pipefd[2];
+	int pid;
+
+	if (!file || !argv || (type != 'r' && type != 'w') || pipe(pipefd) == -1)
+		return -1;
+	if ((pid = fork()) < 0)
+		return -1;
+	if (!pid)
+	{
+		dup2(pipefd[type == 'r'], type == 'r');
+		close(pipefd[0]);
+		close(pipefd[1]);
+		execvp(file, argv);
+		exit(1);
+	}
+	close(pipefd[type == 'r']);
+	return (pipefd[type != 'r']);
+}
+
+=====================================================================================
+
+#include <stdlib.h>
+#include <unistd.h>
+
+int ft_popen(const char *file, char *const argv[], char type)
+{
+	int pipefd[2];
+	int pid;
+
+	if (!file || !argv || (type != 'r' && type != 'w') || pipe(pipefd) < 0)
+		return -1;
+	if ((pid == fork()) < 0)
+		return -1;
+	if (!pid)
+	{
+		dup2(pipefd[type == 'r'], type == 'r');
+		close(pipefd[0]);
+		close(pipefd[1]);
+		execvp(file, argv);
+		exit(1);
+	}
+	close(pipefd[type == 'r']);
+	return (pipefd[type != 'r']);
+}
+
+=========================================================================
+
+#include <unistd.h>
+#include <stdlib.h>
+
+int ft_popen(const char *file, char *const argv[], char type)
+{
+	int pipefd[2];
+	int pid;
+
+	if (!file || !argv || (type != 'r' && type != 'w') || pipe(pipefd) < 0)
+		return (-1);
+	if ((pid = fork()) < 0)
+		return (-1);
+	if (!pid)
+	{
+		dup2(pipefd[type == 'r'], type == 'r');
+		close(pipefd[0]);
+		close(pipefd[1]);
+		execvp(file, argv);
+		exit(1);
+	}
+	close(pipefd[type == 'r']);
+	return (pipefd[type != 'r']);
+}
 
