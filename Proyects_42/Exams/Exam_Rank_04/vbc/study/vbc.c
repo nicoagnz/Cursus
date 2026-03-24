@@ -1,7 +1,5 @@
-
-
 #include <stdio.h>
-#include <stdlib.h.h>
+#include <stdlib.h>
 #include <ctype.h>
 
 typedef struct node {
@@ -46,7 +44,7 @@ void    unexpected(char c)
 
 int accept(char **s, char c)
 {
-    if (**s == c)							// AÑADIDO  "== c"
+    if (**s == c)								// AÑADIDO  "== c"
     {
         (*s)++;
         return (1);
@@ -62,23 +60,24 @@ int expect(char **s, char c)
     return (0);
 }
 
-static node *parse_expr_r(char **s);		// AÑADIDO
-static node *parse_term   (char **s);		// AÑADIDO
-static node *parse_factor (char **s);		// AÑADIDO
+static node *parse_expr_r(char **s);			// AÑADIDO
+static node *parse_term(char **s);				// AÑADIDO
+static node *parse_factor(char **s);			// AÑADIDO
 
-static node parser_factor(char **s)			// AÑADIDO
+static node *parse_factor(char **s)				// AÑADIDO
 {
-	node n;
+	node *n;
 	
 	if (isdigit((unsigned char)**s))
 	{
 		n = new_node((node){VAL, **s - '0', NULL, NULL});
 		(*s)++;
+		return n;
 	}
 	if (accept(s, '('))
 	{
-		n = parser_expr_r(s);
-		if(!n || !expect(s, ')'));
+		n = parse_expr_r(s);
+		if(!n || !expect(s, ')'))
 		{
 			destroy_tree(n);
 			return NULL;
@@ -89,8 +88,8 @@ static node parser_factor(char **s)			// AÑADIDO
 	return NULL;
 }
 
-static node **parse_term(char **s)			// AÑADIDO
-{	// AÑADIDO
+static node *parse_term(char **s)				// AÑADIDO
+{
 	node *left = parse_factor(s);
 	node *right;
 	
@@ -98,7 +97,7 @@ static node **parse_term(char **s)			// AÑADIDO
 		return NULL;
 	while(accept(s, '*'))
 	{
-		right = parser_factor(s);
+		right = parse_factor(s);
 		if(!right)
 			return (destroy_tree(left), NULL);
 		left = new_node((node){MULTI, 0, left, right});
@@ -106,16 +105,16 @@ static node **parse_term(char **s)			// AÑADIDO
 	return left;
 }
 
-static node **parse_term(char **s)			// AÑADIDO
+static node *parse_expr_r(char **s)				// AÑADIDO
 {
-	node *left = parse_factor(s);
+	node *left = parse_term(s);
 	node *right;
 	
 	if(!left)
 		return NULL;
 	while(accept(s, '+'))
 	{
-		right = parser_factor(s);
+		right = parse_term(s);
 		if(!right)
 			return (destroy_tree(left), NULL);
 		left = new_node((node){ADD, 0, left, right});
@@ -126,14 +125,14 @@ static node **parse_term(char **s)			// AÑADIDO
 
 node    *parse_expr(char *s)
 {
-	char *p = s;							// AÑADIDO
-	node *ret = parse_expr_r(&p);			// AÑADIDO
+	char *p = s;								// AÑADIDO
+	node *ret = parse_expr_r(&p);				// AÑADIDO
 
-	if (!ret)								// AÑADIDO
-		return NULL; 						// AÑADIDO
-    if (*p)									// MOD "(*s)" POR "(*p)"
+	if (!ret)									// AÑADIDO
+		return NULL; 							// AÑADIDO
+    if (*p)										// MOD "(*s)" POR "(*p)"
     {
-    	unexpected(*p);						// AÑADIDO
+    	unexpected(*p);							// AÑADIDO
         destroy_tree(ret);
         return (NULL);
     }
@@ -151,7 +150,7 @@ int eval_tree(node *tree)
         case VAL:
             return (tree->val);
     }
-    return (0);								// AÑADIDO
+    return (0);									// AÑADIDO
 }
 
 int main(int argc, char **argv)
@@ -163,8 +162,10 @@ int main(int argc, char **argv)
         return (1);
     printf("%d\n", eval_tree(tree));
     destroy_tree(tree);
-    return (0);								// AÑADIDO
+    return (0);									// AÑADIDO
 }
+
+===================================================================================================
 
 ===================================================================================================
 
@@ -214,7 +215,7 @@ void    unexpected(char c)
 
 int accept(char **s, char c)
 {
-    if (**s)
+    if (**s == c)
     {
         (*s)++;
         return (1);
@@ -230,14 +231,35 @@ int expect(char **s, char c)
     return (0);
 }
 
-//...
+static node *parse_expr_r(char **s);
+static node *parse_term(char **s);
+static node *parse_factor(char **s);
+
+static node *parse_factor(char **s)
+{
+
+}
+
+static node *parse_term(char **s)
+{
+
+}
+
+static node *parse_expr_r(char **s)
+{
+
+}
 
 node    *parse_expr(char *s)
 {
-    //...
+    char *p = s;
+	node *ret = parse_expr_r(&p);
 
-    if (*s) 
+	if (!ret)
+		return NULL;
+    if (*p) 
     {
+		unexpected(*p);
         destroy_tree(ret);
         return (NULL);
     }
@@ -255,6 +277,7 @@ int eval_tree(node *tree)
         case VAL:
             return (tree->val);
     }
+	return 0
 }
 
 int main(int argc, char **argv)
@@ -266,6 +289,6 @@ int main(int argc, char **argv)
         return (1);
     printf("%d\n", eval_tree(tree));
     destroy_tree(tree);
+	return 0;
 }
-
 
