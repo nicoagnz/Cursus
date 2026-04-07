@@ -6,13 +6,13 @@
 #    By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/01 12:00:09 by nikotina          #+#    #+#              #
-#    Updated: 2026/04/07 11:05:15 by nacuna-g         ###   ########.fr        #
+#    Updated: 2026/04/07 11:03:59 by nacuna-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureaucrat
 
-SRCS = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp main.cpp
+SRCS = Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
