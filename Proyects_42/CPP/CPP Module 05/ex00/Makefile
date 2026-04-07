@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nikotina <nikotina@student.42.fr>          +#+  +:+       +#+         #
+#    By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/01 12:00:09 by nikotina          #+#    #+#              #
-#    Updated: 2026/04/01 12:00:35 by nikotina         ###   ########.fr        #
+#    Created: 2026/04/01 12:00:09 by nacuna-g          #+#    #+#              #
+#    Updated: 2026/04/07 12:26:25 by nacuna-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ RM = rm -f
 
 all: $(NAME)
 
-# Build the executable
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
@@ -35,8 +34,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-# Rebuild
 re: fclean all
 
-# Phony targets
 .PHONY: all clean fclean re

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikotina <nikotina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 12:24:20 by nikotina          #+#    #+#             */
-/*   Updated: 2026/04/06 11:31:32 by nikotina         ###   ########.fr       */
+/*   Created: 2026/04/01 12:24:20 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/07 12:28:44 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ AForm::AForm(const std::string& name, int sign, int exec)
 		throw GradeTooHighException();
 	if (sign > 150 || exec > 150)
 		throw GradeTooLowException();
+}
+
+AForm::AForm(const AForm& other)
+	: _name(other._name), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute), _isSigned(other._isSigned) {}
+
+AForm& AForm::operator=(const AForm& other)
+{
+	if (this != &other)
+	{
+		_isSigned = other._isSigned;
+	}
+	return *this;
 }
 
 AForm::~AForm() {}

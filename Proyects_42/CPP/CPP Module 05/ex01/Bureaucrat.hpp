@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikotina <nikotina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 11:30:44 by nikotina          #+#    #+#             */
-/*   Updated: 2026/04/01 12:31:42 by nikotina         ###   ########.fr       */
+/*   Created: 2026/04/07 12:26:47 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/07 12:32:02 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP

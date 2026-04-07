@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikotina <nikotina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/06 11:23:40 by nikotina          #+#    #+#             */
-/*   Updated: 2026/04/06 11:24:57 by nikotina         ###   ########.fr       */
+/*   Created: 2026/04/06 11:23:40 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/07 12:29:05 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ private:
 
 public:
 	RobotomyRequestForm(const std::string& target);
+	RobotomyRequestForm(const RobotomyRequestForm& other);
+	RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
+	~RobotomyRequestForm();
 	void execute(Bureaucrat const & executor) const;
 };
 

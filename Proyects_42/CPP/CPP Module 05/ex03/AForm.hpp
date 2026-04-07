@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikotina <nikotina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/01 12:23:46 by nikotina          #+#    #+#             */
-/*   Updated: 2026/04/06 11:30:24 by nikotina         ###   ########.fr       */
+/*   Created: 2026/04/01 12:23:46 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/07 12:31:51 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ protected:
 
 public:
 	AForm(const std::string& name, int sign, int exec);
+	AForm(const AForm& other);
+	AForm& operator=(const AForm& other);
 	virtual ~AForm();
 
 	const std::string& getName() const;

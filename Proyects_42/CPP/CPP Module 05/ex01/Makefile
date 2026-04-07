@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nikotina <nikotina@student.42.fr>          +#+  +:+       +#+         #
+#    By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/01 12:00:09 by nikotina          #+#    #+#              #
-#    Updated: 2026/04/01 12:32:57 by nikotina         ###   ########.fr        #
+#    Created: 2026/04/01 12:00:09 by nacuna-g          #+#    #+#              #
+#    Updated: 2026/04/07 12:27:21 by nacuna-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

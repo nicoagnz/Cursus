@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nikotina <nikotina@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/06 11:24:38 by nikotina          #+#    #+#             */
-/*   Updated: 2026/04/06 11:27:35 by nikotina         ###   ########.fr       */
+/*   Created: 2026/04/06 11:24:38 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/07 12:28:13 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,18 @@
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target)
 	: AForm("Presidential", 25, 5), _target(target) {}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other)
+	: AForm(other.getName(), other.getGradeToSign(), other.getGradeToExecute()), _target(other._target) {}
+
+PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other)
+{
+	if (this != &other)
+		_target = other._target;
+	return *this;
+}
+
+PresidentialPardonForm::~PresidentialPardonForm() {}
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
