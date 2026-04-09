@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 11:31:29 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/07 12:32:28 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:04:05 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,34 +26,10 @@ int main()
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
-	std::cout << "\n=== INVALID BUREAUCRAT ===" << std::endl;
-	try
-	{
-		Bureaucrat b("Bob", 0);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Caught: " << e.what() << std::endl;
-	}
-
-	std::cout << "\n=== INCREMENT / DECREMENT ===" << std::endl;
-	try
-	{
-		Bureaucrat c("Charlie", 2);
-		std::cout << c << std::endl;
-		c.incrementGrade();
-		std::cout << c << std::endl;
-		c.incrementGrade();
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Caught: " << e.what() << std::endl;
-	}
-
 	std::cout << "\n=== FORM CREATION ===" << std::endl;
 	try
 	{
-		Form f1("Form-A", 50, 25);
+		Form f1("Form-A", 50, 45);
 		std::cout << f1 << std::endl;
 	}
 	catch (std::exception &e)
@@ -64,7 +40,7 @@ int main()
 	std::cout << "\n=== INVALID FORM ===" << std::endl;
 	try
 	{
-		Form f2("BadForm", 0, 10);
+		Form f2("BadForm", 0, 50);
 	}
 	catch (std::exception &e)
 	{
@@ -75,7 +51,7 @@ int main()
 	try
 	{
 		Bureaucrat boss("Boss", 10);
-		Form contract("Contract", 20, 10);
+		Form contract("Contract", 20, 15);
 
 		std::cout << contract << std::endl;
 		boss.signForm(contract);
@@ -90,7 +66,7 @@ int main()
 	try
 	{
 		Bureaucrat intern("Intern", 100);
-		Form secret("Secret", 50, 10);
+		Form secret("Secret", 50, 40);
 
 		std::cout << secret << std::endl;
 		intern.signForm(secret);
@@ -105,7 +81,7 @@ int main()
 	try
 	{
 		Bureaucrat chief("Chief", 1);
-		Form top("TopSecret", 5, 5);
+		Form top("TopSecret", 5, 3);
 
 		chief.signForm(top);
 		chief.signForm(top);
@@ -115,6 +91,8 @@ int main()
 	{
 		std::cout << "Error: " << e.what() << std::endl;
 	}
+
+
 
 	return 0;
 }

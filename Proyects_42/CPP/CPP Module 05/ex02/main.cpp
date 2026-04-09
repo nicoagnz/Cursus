@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 11:31:29 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/07 12:32:38 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:22:50 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int main()
 
 	mid.signForm(robot);
 
-	std::cout << "\n-- Executing multiple times (random result) --" << std::endl;
+	std::cout << "\n-- Executing multiple times (50% success rate) --" << std::endl;
 	for (int i = 0; i < 5; i++)
 		boss.executeForm(robot);
 

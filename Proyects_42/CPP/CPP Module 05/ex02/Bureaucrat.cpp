@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 11:33:19 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/07 12:27:51 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:30:52 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ void Bureaucrat::executeForm(AForm const & form) const
 {
 	try
 	{
+		std::cout << _name << " is executing " << form.getName() << std::endl;
 		form.execute(*this);
-		std::cout << _name << " executed " << form.getName() << std::endl;
+		std::cout << _name << " executed " << form.getName() << " successfully" << std::endl;
 	}
 	catch (std::exception& e)
 	{

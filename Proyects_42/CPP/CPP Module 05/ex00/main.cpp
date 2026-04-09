@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 11:31:29 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/07 12:32:16 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/04/09 10:30:00 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,8 +101,6 @@ int main()
 		std::cout << "\nAfter h = i:" << std::endl;
 		std::cout << "h: " << h << std::endl;
 		std::cout << "i: " << i << std::endl;
-
-		std::cout << "\n(Note that h's name does not change)" << std::endl;
 	}
 	catch (std::exception &e)
 	{

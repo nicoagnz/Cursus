@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 12:24:20 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/07 12:32:23 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/04/09 11:03:29 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ std::ostream& operator<<(std::ostream& os, const Form& f)
 {
 	os << f.getName()
 	<< ", sign grade " << f.getGradeToSign()
-	<< ", execute grade " << f.getGradeToExecute()
+	<< ", exec grade " << f.getGradeToExecute()
 	<< ", signed: " << (f.getIsSigned() ? "yes" : "no");
 	return os;
 }
