@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 10:57:06 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/22 11:45:25 by nacuna-g         ###   ########.fr       */
+/*   Created: 2026/04/22 11:45:46 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/22 11:45:47 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#pragma once
 
-#include <stdint.h>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
-struct Data
-{
-	int value;
-};
-
-class Serializer
-{
-private:
-	Serializer();
-
+class Base {
 public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
+	virtual ~Base() {}
 };
-
-#endif

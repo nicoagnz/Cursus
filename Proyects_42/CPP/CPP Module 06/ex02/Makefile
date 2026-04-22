@@ -5,31 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/09 11:54:49 by nacuna-g          #+#    #+#              #
-#    Updated: 2026/04/09 12:59:39 by nacuna-g         ###   ########.fr        #
+#    Created: 2026/04/22 11:46:05 by nacuna-g          #+#    #+#              #
+#    Updated: 2026/04/22 12:04:20 by nacuna-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	convert
+NAME = Identify_real_type
 
-CXX			=	c++
-CXXFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS		=	main.cpp \
-				ScalarConverter.cpp
+SRC = main.cpp \
+		Base.cpp \
+		generate.cpp \
+		identify.cpp \
+		A.cpp \
+		B.cpp \
+		C.cpp \
 
-OBJS		=	$(SRCS:.cpp=.o)
+OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+$(NAME): $(OBJ)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
@@ -37,4 +42,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-

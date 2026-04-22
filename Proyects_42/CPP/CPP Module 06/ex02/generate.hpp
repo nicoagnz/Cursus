@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   generate.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 10:57:06 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/22 11:45:25 by nacuna-g         ###   ########.fr       */
+/*   Created: 2026/04/22 11:45:56 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/22 11:45:57 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#pragma once
+#include "Base.hpp"
+#include <cstdlib>
+#include <ctime>
 
-#include <stdint.h>
-#include <iostream>
-
-struct Data
-{
-	int value;
-};
-
-class Serializer
-{
-private:
-	Serializer();
-
-public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
-};
-
-#endif
+Base *generate(void);

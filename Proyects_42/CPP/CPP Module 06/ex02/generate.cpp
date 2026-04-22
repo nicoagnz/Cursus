@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   generate.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 10:57:06 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/22 11:45:25 by nacuna-g         ###   ########.fr       */
+/*   Created: 2026/04/22 11:45:53 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/22 11:45:54 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#include "generate.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-#include <stdint.h>
-#include <iostream>
-
-struct Data
-{
-	int value;
-};
-
-class Serializer
-{
-private:
-	Serializer();
-
-public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
-};
-
-#endif
+Base *generate(void){
+	static bool seeded = false;
+	if (!seeded) {
+		std::srand(std::time(NULL));
+		seeded = true;
+	}
+	int r = std::rand() % 3;
+	switch (r) {
+		case 0:
+			return new A();
+		case 1:
+			return new B();
+		default:
+			return new C();
+	}
+}

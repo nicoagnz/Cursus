@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/10 10:57:06 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/22 11:45:25 by nacuna-g         ###   ########.fr       */
+/*   Created: 2026/04/22 11:46:03 by nacuna-g          #+#    #+#             */
+/*   Updated: 2026/04/22 12:06:57 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-#define SERIALIZER_HPP
+#include "Base.hpp"
+#include "generate.hpp"
+#include "identify.hpp"
 
-#include <stdint.h>
-#include <iostream>
+using std::cout;
+using std::endl;
 
-struct Data
-{
-	int value;
-};
+int main() {
+	std::srand(std::time(NULL));
 
-class Serializer
-{
-private:
-	Serializer();
+	Base *obj = generate();
 
-public:
-	static uintptr_t serialize(Data* ptr);
-	static Data* deserialize(uintptr_t raw);
-};
+	cout << "Pointer identify: ";
+	identify(obj);
 
-#endif
+	cout << "Reference identify: ";
+	identify(*obj);
+
+	delete obj;
+	return 0;
+}
+
