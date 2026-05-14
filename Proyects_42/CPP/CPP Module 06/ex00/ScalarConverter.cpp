@@ -6,7 +6,7 @@
 /*   By: nacuna-g <nacuna-g@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 12:15:54 by nacuna-g          #+#    #+#             */
-/*   Updated: 2026/04/09 13:05:05 by nacuna-g         ###   ########.fr       */
+/*   Updated: 2026/05/12 10:26:29 by nacuna-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void printInt(double value)
 {
 	std::cout << "int: ";
 	if (std::isnan(value) ||
-		value > std::numeric_limits<int>::max() ||								//////////////////
+		value > std::numeric_limits<int>::max() ||
 		value < std::numeric_limits<int>::min())
 		std::cout << "impossible\n";
 	else
@@ -48,7 +48,7 @@ static void printFloat(double value)
 	{
 		std::cout << f;
 		if (std::floor(f) == f)
-			std::cout << ".0";					//////////////////
+			std::cout << ".0";
 		std::cout << "f\n";
 	}
 }
