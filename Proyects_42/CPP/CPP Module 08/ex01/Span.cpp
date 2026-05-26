@@ -1,4 +1,5 @@
 #include "Span.hpp"
+#include <iostream>
 #include <exception>
 #include <algorithm>
 
@@ -38,7 +39,7 @@ unsigned int Span::shortestSpan() const{
 
 	std::vector<int> tmp = _numbers;
 
-	std:sort(tmp.begin(), tmp.end());
+	std::sort(tmp.begin(), tmp.end());
 
 	int shortest = tmp[1] - tmp[0];
 

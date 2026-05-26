@@ -29,14 +29,18 @@ class Span{
 		void addNumber(int value);
 
 		template <typename It>
-		void addRange(It begin, It end){
-			for (It it = begin, it != end, ++it){
-				if (_numbers.size() >= _maxSize)
-					throw FullException();
-				_numbers.push_back(*it);
-			}
-		}
+		void addRange(It begin, It end);
 
 		unsigned int shortestSpan() const;
 		unsigned int longestSpan() const;
 };
+
+template <typename It>
+void Span::addRange(It begin, It end){
+	for (It it = begin; it != end; ++it)
+	{
+		if (_numbers.size() >= _maxSize)
+			throw FullException();
+		_numbers.push_back(*it);
+	}
+}
