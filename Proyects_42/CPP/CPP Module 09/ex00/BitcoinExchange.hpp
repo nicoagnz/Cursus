@@ -13,7 +13,6 @@ class BitcoinExchange
 	public:
 		BitcoinExchange(){};
 		~BitcoinExchange(){};
-
 		void loadDatabase();
 		void processInput(const std::string& filename);
 };
