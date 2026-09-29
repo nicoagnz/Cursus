@@ -16,6 +16,7 @@ int main(int ac, char **av)
 		return 1;
 	}
 	pmerge.displayBefore();
-
+	pmerge.sortVector();
+	pmerge.displayAfter();
 	return 0;
 }
