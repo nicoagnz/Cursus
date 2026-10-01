@@ -10,6 +10,47 @@ PmergeMe::~PmergeMe()
 {
 }
 
+std::vector<int> PmergeMe::getJacobsthalOrder(int size)
+{
+	std::vector<int> order;
+	std::vector<bool> used(size + 1, false);
+
+	if (size >= 2)
+		used[2] = true;
+
+	int previous = 1;
+	int current = 3;
+
+	while (previous < size)
+	{
+		int end = current;
+
+		if (end > size)
+			end = size;
+
+		for (int i = end; i > previous; i--)
+		{
+			if (!used[i])
+			{
+				order.push_back(i);
+				used[i] = true;
+			}
+		}
+
+		int next = current + 2 * previous;
+		previous = current;
+		current = next;
+	}
+
+	for (int i = 1; i <= size; i++)
+	{
+		if (!used[i])
+			order.push_back(i);
+	}
+
+	return order;
+}
+
 void PmergeMe::mergePairs(std::vector<Pair>& pairs, int left, int mid, int right)
 {
 	std::vector<Pair> temp;
@@ -66,7 +107,10 @@ void PmergeMe::sortDeque()
 void PmergeMe::sortVector()
 {
 	std::vector<Pair> pairs;
+	std::vector<int> mainChain;
+
 	int odd = -1;
+
 	for (size_t i = 0; i < _vector.size(); i += 2)
 	{
 		if (i + 1 >= _vector.size())
@@ -76,6 +120,9 @@ void PmergeMe::sortVector()
 		else
 		{
 			Pair p;
+
+			p.index = pairs.size() + 1;
+
 			if (_vector[i] > _vector[i + 1])
 			{
 				p.a = _vector[i];
@@ -89,9 +136,34 @@ void PmergeMe::sortVector()
 			pairs.push_back(p);
 		}
 	}
+
 	if (!pairs.empty())
 		sortPairs(pairs, 0, pairs.size() - 1);
-	
+
+	for (size_t i = 0; i < pairs.size(); i++)
+	{
+		if (pairs[i].index == 2)
+		{
+			mainChain.push_back(pairs[i].b);
+			break;
+		}
+	}
+
+	for (size_t i = 0; i < pairs.size(); i++)
+		mainChain.push_back(pairs[i].a);
+
+	std::vector<int> order = getJacobsthalOrder(pairs.size());
+
+	 std::cout << "Main chain: ";
+
+	for (size_t i = 0; i < mainChain.size(); i++)
+		std::cout << mainChain[i] << " ";
+
+	std::cout << std::endl;
+
+	if (odd != -1)
+		std::cout << "Odd: " << odd << std::endl;
+
 }
 
 void PmergeMe::displayBefore() const

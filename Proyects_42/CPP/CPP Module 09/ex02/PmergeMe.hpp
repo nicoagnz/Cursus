@@ -10,6 +10,13 @@ private:
 	std::vector<int> _vector;
 	std::deque<int>  _deque;
 
+	struct Pair
+	{
+		int	a;
+		int	b;
+		int index;
+	};
+
 public:
 	PmergeMe();
 	~PmergeMe();
@@ -18,15 +25,13 @@ public:
 	bool parseInput(int argc, char **argv);
 	void sortVector();
 	void sortDeque();
-	void PmergeMe::sortPairs(std::vector<Pair>& pairs, int left, int right);
-	void PmergeMe::mergePairs(std::vector<Pair>& pairs, int left, int mid, int right);
+	void sortPairs(std::vector<Pair>& pairs, int left, int right);
+	void mergePairs(std::vector<Pair>& pairs, int left, int mid, int right);
+	std::vector<int> generateJacobsthal(int size);
+	std::vector<int> getJacobsthalOrder(int size);
 	void displayAfter() const;
 };
 
-struct Pair
-{
-	int	a;
-	int	b;
-};
+
 
 #endif
