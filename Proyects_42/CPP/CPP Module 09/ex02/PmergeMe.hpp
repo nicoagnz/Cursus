@@ -29,6 +29,7 @@ public:
 	void mergePairs(std::vector<Pair>& pairs, int left, int mid, int right);
 	std::vector<int> generateJacobsthal(int size);
 	std::vector<int> getJacobsthalOrder(int size);
+	Pair getPairByIndex(const std::vector<Pair>& pairs, int index);
 	void displayAfter() const;
 };
 

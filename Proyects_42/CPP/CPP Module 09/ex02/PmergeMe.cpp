@@ -10,6 +10,17 @@ PmergeMe::~PmergeMe()
 {
 }
 
+PmergeMe::Pair PmergeMe::getPairByIndex(const std::vector<Pair>& pairs, int index)
+{
+	for (size_t i = 0; i < pairs.size(); i++)
+	{
+		if (pairs[i].index == index)
+			return pairs[i];
+	}
+
+	return Pair();
+}
+
 std::vector<int> PmergeMe::getJacobsthalOrder(int size)
 {
 	std::vector<int> order;
@@ -153,6 +164,18 @@ void PmergeMe::sortVector()
 		mainChain.push_back(pairs[i].a);
 
 	std::vector<int> order = getJacobsthalOrder(pairs.size());
+
+	for (size_t i = 0; i < order.size(); i++)
+	{
+		int index = order[i];
+		Pair currentPair = getPairByIndex(pairs, index);
+
+		/*
+		Aqui va el código para insertar el elemento en la cadena principal.
+		Order pilla el orden de Jacobsthal, y currentPair es el par que se va a insertar en la cadena principal.
+		*/
+
+	}
 
 	 std::cout << "Main chain: ";
 
