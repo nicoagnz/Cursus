@@ -10,6 +10,45 @@ PmergeMe::~PmergeMe()
 {
 }
 
+void PmergeMe::displayAfter() const
+{
+	std::cout << "After: ";
+
+	for (std::vector<int>::const_iterator it = _vector.begin();
+			it != _vector.end(); ++it)
+	{
+		std::cout << *it << " ";
+	}
+
+	std::cout << std::endl;
+}
+
+int PmergeMe::findInsertPosition(const std::vector<int>& mainChain, int value, int end)
+{
+	int left = 0;
+	int right = end;
+
+	while (left <= right)
+	{
+		int mid = (left + right) / 2;
+		if (mainChain[mid] < value)
+			left = mid + 1;
+		else
+			right = mid - 1;
+	}
+	return left;
+}
+
+int PmergeMe::getPosition(const std::vector<int>& mainChain, int value)
+{
+	for (size_t i = 0; i < mainChain.size(); i++)
+	{
+		if (mainChain[i] == value)
+			return i;
+	}
+	return -1;
+}
+
 PmergeMe::Pair PmergeMe::getPairByIndex(const std::vector<Pair>& pairs, int index)
 {
 	for (size_t i = 0; i < pairs.size(); i++)
@@ -169,12 +208,9 @@ void PmergeMe::sortVector()
 	{
 		int index = order[i];
 		Pair currentPair = getPairByIndex(pairs, index);
-
-		/*
-		Aqui va el código para insertar el elemento en la cadena principal.
-		Order pilla el orden de Jacobsthal, y currentPair es el par que se va a insertar en la cadena principal.
-		*/
-
+		int end = getPosition(mainChain, currentPair.a);
+		int position = findInsertPosition(mainChain, currentPair.b, end);
+		mainChain.insert(mainChain.begin() + position, currentPair.b);
 	}
 
 	 std::cout << "Main chain: ";
