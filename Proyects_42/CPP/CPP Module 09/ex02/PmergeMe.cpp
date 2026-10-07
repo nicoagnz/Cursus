@@ -41,7 +41,7 @@ std::vector<int> PmergeMe::getJacobsthalOrder(int size)
 		if (end > size)
 			end = size;
 		for (int i = end; i > previous; --i)
-			order.push_back(i);
+			order.push_back(i - 1);
 		int next = current + 2 * previous;
 		previous = current;
 		current = next;
@@ -136,6 +136,7 @@ void PmergeMe::sortVector()
 	}
 	if (!pairs.empty())
 		sortPairs(pairs, 0, static_cast<int>(pairs.size()) - 1);
+
 	for (size_t i = 0; i < pairs.size(); ++i)
 		pairs[i].index = static_cast<int>(i) + 1;
 
@@ -144,17 +145,27 @@ void PmergeMe::sortVector()
 		chain.push_back(pairs[0].b);
 	for (size_t i = 0; i < pairs.size(); ++i)
 		chain.push_back(pairs[i].a);
+	int pendingCount;
 
-	int pendingCount = static_cast<int>(pairs.size()) - (pairs.empty() ? 0 : 1);
+	if (pairs.empty())
+		pendingCount = 0;
+	else
+		pendingCount = static_cast<int>(pairs.size()) - 1;
+
 	if (odd != -1)
 		++pendingCount;
-	std::vector<int> order = getJacobsthalOrder(pendingCount + (pairs.empty() ? 0 : 1));
+
+	int orderSize = pendingCount;
+	if (!pairs.empty())
+		++orderSize;
+
+	std::vector<int> order = getJacobsthalOrder(orderSize);
 	for (size_t i = 0; i < order.size(); ++i)
 	{
 		int index = order[i];
-		if (index <= static_cast<int>(pairs.size()))
+		if (index < static_cast<int>(pairs.size()))
 		{
-			const Pair& p = pairs[index - 1];
+			const Pair& p = pairs[index];
 			int end = 0;
 			while (end < static_cast<int>(chain.size()) && chain[end] != p.a)
 				++end;
@@ -210,16 +221,26 @@ void PmergeMe::sortDeque()
 	for (size_t i = 0; i < pairs.size(); ++i)
 		chain.push_back(pairs[i].a);
 
-	int pendingCount = static_cast<int>(pairs.size()) - (pairs.empty() ? 0 : 1);
+	int pendingCount;
+
+	if (pairs.empty())
+		pendingCount = 0;
+	else
+		pendingCount = static_cast<int>(pairs.size()) - 1;
+
 	if (odd != -1)
 		++pendingCount;
-	std::vector<int> order = getJacobsthalOrder(pendingCount + (pairs.empty() ? 0 : 1));
+
+	int orderSize = pendingCount;
+	if (!pairs.empty())
+		++orderSize;
+	std::vector<int> order = getJacobsthalOrder(orderSize);
 	for (size_t i = 0; i < order.size(); ++i)
 	{
 		int index = order[i];
-		if (index <= static_cast<int>(pairs.size()))
+		if (index < static_cast<int>(pairs.size()))
 		{
-			const Pair& p = pairs[index - 1];
+			const Pair& p = pairs[index];
 			int end = 0;
 			while (end < static_cast<int>(chain.size()) && chain[end] != p.a)
 				++end;
