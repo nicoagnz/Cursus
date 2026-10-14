@@ -1,0 +1,11 @@
+
+Orden actual de vect2.hpp y vect2.cpp:
+   - Constructores
+   - Destructor
+   - Asignación y acceso
+   - Operadores unarios
+   - Multiplicación por escalar
+   - Operadores con vectores
+   - Incremento y decremento
+   - Comparaciones
+   - Funciones amigas
