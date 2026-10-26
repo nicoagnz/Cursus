@@ -1,39 +1,30 @@
-#ifndef VECT2_HPP
-#define VECT2_HPP
-
+#pragma once
 #include <iostream>
 
 class vect2
 {
 	private:
 		int x, y;
-
 	public:
-		// Constructores
 		vect2() : x(0), y(0) {}
 		vect2(int a, int b) : x(a), y(b) {}
 		vect2(const vect2& v) : x(v.x), y(v.y) {}
-
-		// Destructor
 		~vect2() {}
 
-		// Asignación y acceso
-		vect2& operator=(const vect2& v)
-		{
+		vect2& operator=(const vect2& v){
 			x = v.x;
 			y = v.y;
 			return *this;
 		}
 
-		int operator[](int i) const
-		{
-			return i == 0 ? x : y;
+		int operator[](int i) const {
+			return (i == 0 ? x : y);
+		}
+		int& operator[](int i) {
+			return (i == 0 ? x : y);
 		}
 
-		int& operator[](int i)
-		{
-			return i == 0 ? x : y;
-		}
+
 
 		// Operadores unarios
 		vect2 operator-() const
@@ -145,5 +136,3 @@ inline std::ostream& operator<<(std::ostream& os, const vect2& v)
 {
 	return os << "{" << v[0] << ", " << v[1] << "}";
 }
-
-#endif
